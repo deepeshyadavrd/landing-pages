@@ -1,0 +1,19 @@
+.form-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .form-title {
+    font-size: 1.75rem;
+  }
+
+  .form-subtitle {
+    font-size: 1rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-item {
+    padding: 1rem;
+  }
