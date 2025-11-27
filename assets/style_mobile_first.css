@@ -462,6 +462,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 25px;
 }
 
 .btn-heart:hover {
@@ -974,12 +975,12 @@ body {
   }
 
   .combo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Allow multiple columns */
+    grid-template-columns: repeat(2, 1fr); /* Allow multiple columns */
     gap: 2rem;
   }
 
   .combo-image-wrapper {
-    height: 20rem; /* Restore original desktop height */
+    height: 15rem; /* Restore original desktop height */
   }
 
   /* Categories */
