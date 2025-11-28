@@ -1057,16 +1057,17 @@ body {
     height: 18rem;
   }
 
-  .pp1 { grid-area: 1 / 1 / 2 / 2; }
-  .pp2 { grid-area: 1 / 2 / 2 / 3; }
-  .pp3 { grid-area: 1 / 3 / 2 / 4; }
-  .pp4 { grid-area: 1 / 4 / 2 / 5; }
-  .pp5 { grid-area: 2 / 2 / 3 / 3; }
-  .pp6 { grid-area: 2 / 3 / 3 / 4; }
+  
 }
 
 @media (min-width: 1280px) {
   .combo-image-wrapper {
     height: 18rem; 
   }
+  .pp1 { grid-area: 1 / 1 / 2 / 2; }
+  .pp2 { grid-area: 1 / 2 / 2 / 3; }
+  .pp3 { grid-area: 1 / 3 / 2 / 4; }
+  .pp4 { grid-area: 1 / 4 / 2 / 5; }
+  .pp5 { grid-area: 2 / 2 / 3 / 3; }
+  .pp6 { grid-area: 2 / 3 / 3 / 4; }
 }
