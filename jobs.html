@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings - Find Your Dream Job</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        } */
+
+        .jobs-container {
+            padding: 60px 20px;
+        }
+
+        .job-card {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .job-card-body {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .job-icon {
+            background: rgba(13, 110, 253, 0.1);
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0d6efd;
+        }
+
+        .job-badge {
+            background-color: #198754;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .job-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 6px;
+        }
+
+        .job-company {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .job-description {
+            font-size: 0.95rem;
+            color: #495057;
+            margin-bottom: 16px;
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .job-meta {
+            margin-bottom: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 8px;
+        }
+
+        .meta-item svg {
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .apply-btn {
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .apply-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(13, 110, 253, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+/* 
+        .form-section {
+            background: white;
+            padding: 60px 20px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        .form-card h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            color: #212529;
+        }
+
+        .form-intro {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 32px;
+            font-size: 1.05rem;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+            outline: none;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-text {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 6px;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .form-check input {
+            margin-right: 12px;
+            margin-top: 4px;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+        }
+
+        .form-check label {
+            cursor: pointer;
+            color: #495057;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+            border: none;
+            color: white;
+            padding: 14px 24px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-top: 24px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(13, 110, 253, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        } */
+
+        @media (max-width: 768px) {
+            /* .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-card {
+                padding: 24px;
+            } */
+
+            .job-card-body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <!-- <div class="hero-section">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h1>Find Your Dream Job</h1>
+            <p>Discover exciting opportunities at leading companies around the world</p>
+        </div>
+    </div> -->
+
+    <!-- Job Listings -->
+    <div class="jobs-container">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+                <!-- Job Card 1 -->
+                <div class="job-card">
+                    <div class="job-card-body">
+                        <div class="job-header">
+                            <div class="job-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <span class="job-badge">Full-time</span>
+                        </div>
+                        <h3 class="job-title">Graphic Designer</h3>
+                        <p class="job-company">Urbanwood</p>
+                        <p class="job-description">Join our design team to shape visually striking and meaningful brand experiences that inspire audiences worldwide.</p>
+                        <div class="job-meta">
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                Gurugram, HR
+                            </div>
+                            <!-- <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                                $120k - $160k
+                            </div> -->
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                Posted 2 days ago
+                            </div>
+                        </div>
+                        <button class="apply-btn" onclick="scrollToForm()">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card">
+                    <div class="job-card-body">
+                        <div class="job-header">
+                            <div class="job-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <span class="job-badge">Full-time</span>
+                        </div>
+                        <h3 class="job-title">Sales</h3>
+                        <p class="job-company">Urbanwood</p>
+                        <p class="job-description">Join our sales team to connect with customers, understand their needs, and drive growth through impactful solutions.</p>
+                        <div class="job-meta">
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                Gurugram, HR
+                            </div>
+                            <!-- <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                                $90k - $130k
+                            </div> -->
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                Posted 3 days ago
+                            </div>
+                        </div>
+                        <button class="apply-btn" onclick="scrollToForm()">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card">
+                    <div class="job-card-body">
+                        <div class="job-header">
+                            <div class="job-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <span class="job-badge">Full-time</span>
+                        </div>
+                        <h3 class="job-title">Customer Support</h3>
+                        <p class="job-company">Urbanwood</p>
+                        <p class="job-description">Join our support team to deliver smooth, heartfelt assistance and ensure every customer feels valued and heard.</p>
+                        <div class="job-meta">
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                Gurugram, HR
+                            </div>
+                            <!-- <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                                $130k - $170k
+                            </div> -->
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                Posted 1 day ago
+                            </div>
+                        </div>
+                        <button class="apply-btn" onclick="scrollToForm()">Apply Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Form -->
+    <!-- <div class="form-section" id="application-form">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="form-card">
+                <h2>Apply for a Position</h2>
+                <p class="form-intro">Fill out the form below and we'll get back to you within 24 hours</p>
+
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-input" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-input" placeholder="Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" placeholder="john.doe@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-input" placeholder="+1 (555) 123-4567" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Position</label>
+                        <select class="form-select" required>
+                            <option value="">Select a position...</option>
+                            <option value="Senior Frontend Developer">Senior Frontend Developer - TechCorp Solutions</option>
+                            <option value="UX/UI Designer">UX/UI Designer - Creative Studios</option>
+                            <option value="Backend Engineer">Backend Engineer - DataFlow Inc</option>
+                            <option value="Product Manager">Product Manager - Innovation Labs</option>
+                            <option value="DevOps Engineer">DevOps Engineer - Cloud Systems</option>
+                            <option value="Marketing Specialist">Marketing Specialist - Growth Marketing Co</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Resume/CV</label>
+                        <input type="file" class="form-input" accept=".pdf,.doc,.docx" required>
+                        <p class="form-text">Upload your resume in PDF or DOC format</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Cover Letter</label>
+                        <textarea class="form-textarea" placeholder="Tell us why you're a great fit for this position..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">LinkedIn Profile (Optional)</label>
+                        <input type="url" class="form-input" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the terms and conditions and privacy policy</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+    <script>
+        function scrollToForm() {
+            document.getElementById('application-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your application! We will review it and get back to you soon.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
