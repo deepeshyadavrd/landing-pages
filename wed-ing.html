@@ -5,7 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UrbanWood - Wedding Season Sale</title>
   <link rel="stylesheet" href="assets/style_mobile_first.css">
-  
+  <style>
+    .site-header {
+      position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo img {
+    height: 36px;
+    display: block;
+}
+
+/* Right actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.action-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+}
+
+/* Icons */
+.icon {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+/* WhatsApp brand color */
+.action-link.whatsapp {
+    color: #25D366;
+}
+
+/* Mobile: hide text */
+.action-text {
+    display: none;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .action-text {
+        display: inline;
+    }
+
+    .logo img {
+        height: 42px;
+    }
+}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -29,7 +96,31 @@
               <span class="action-text">+91 9311662426</span>
           </a>
 
-         
+          <!-- WhatsApp -->
+          <a href="https://wa.me/919311662426" target="_blank" class="action-link whatsapp">
+            <svg 
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            width="25"
+            height="25"
+            aria-hidden="true"
+        >
+            <defs>
+                <linearGradient id="waGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#61fd7d"/>
+                    <stop offset="100%" stop-color="#2bb826"/>
+                </linearGradient>
+            </defs>
+        
+            <!-- Background -->
+            <rect width="512" height="512" rx="90" fill="url(#waGradient)"/>
+        
+            <!-- WhatsApp Icon -->
+            <path fill="#fff" d="M256.7 110C177.1 110 112.3 174.8 112.3 254.4c0 27.1 7.6 53.5 22.1 76.8l3.4 5.5L123.3 390l54.6-14.3 5.3 3.1a144.2 144.2 0 0 0 73.5 20.1c79.6 0 144.3-64.8 144.4-144.4A144.4 144.4 0 0 0 256.7 110zm79.2 200.8c-3.6 10.1-21 19.4-29.3 20.6a60 60 0 0 1-27.3-1.7c-6.3-2.1-14.4-4.7-24.7-9.2-43.5-18.8-72-62.6-74.1-65.5-2.2-2.9-17.7-23.6-17.7-44.9s11.2-31.9 15.2-36.2a16 16 0 0 1 11.6-5.4h8.3c2.7.1 6.3-1 9.8 7.5 3.5 8.7 13.3 30.1 13.3 32.2s.7 4.7-.3 7.6-2.9 4.7-4.3 7.3-4.5 5.7-6.5 7.6c-2.2 2.1-4.5 4.5-1.9 8.8s11.3 18.5 24.1 30c16.6 14.8 30.6 19.4 34.9 21.6s6.8 1.8 9.4-1.1 10.8-14.8 13.8-17c2.9-2.2 5.7-1.5 9.8.7s25.3 11.9 29.6 14.1c4.3 2.2 7.2 3.4 8.3 5.2s1.1 10.5-2.6 20.6z"/>
+        </svg>
+        
+              <span class="action-text">+91 9311662426</span>
+          </a>
 
       </div>
     </div>
