@@ -82,51 +82,11 @@ html {
 /* Hero Section */
 .hero-section {
   position: relative;
-  height: 600px;
+  height: 800px;
   background-image: url('images/banner-1-txt.jpg?v=01');
   background-size: cover;
   background-position: center;
   overflow: hidden;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.5), transparent);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 10;
-  color: white;
-}
-
-.hero-title {
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 24px;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-}
-
-.hero-description {
-  font-size: 1.25rem;
-  margin-bottom: 32px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-}
-
-.hero-buttons .btn {
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.hero-buttons .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-}
-
-.hero-buttons .btn-primary:hover {
-  background-color: var(--primary-dark);
-  border-color: var(--primary-dark);
 }
 
 /* Features Section */
@@ -145,7 +105,7 @@ html {
 .feature-icon {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 10%;
   background-color: var(--primary-light);
   display: flex;
   align-items: center;
@@ -647,10 +607,6 @@ html {
   .hero-section {
       height: 394px;
   }
-  .hero-title {
-      font-size: 3rem;
-  }
-  
   .top-links {
       flex-wrap: wrap;
       font-size: 12px;
@@ -664,18 +620,16 @@ html {
 
 @media (max-width: 767px) {
   .hero-section {
-    background-image: url('images/banner-mobile-2.jpeg');
+    background-image: url('images/banner-mobile-2-text.jpg');
       height: 500px;
   }
-  
-  .hero-title {
-      font-size: 2rem;
+  .feature-icon {
+    width: 70px;
+    height: 70px;
   }
-  
-  .hero-description {
-      font-size: 1rem;
+  .feature-title{
+    font-size: 16px;
   }
-  
   .section-title {
       font-size: 2rem;
   }
