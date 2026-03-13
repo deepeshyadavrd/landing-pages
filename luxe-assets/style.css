@@ -83,7 +83,7 @@ html {
 .hero-section {
   position: relative;
   height: 600px;
-  background-image: url('images/luxe-banner.jpg?v=01');
+  background-image: url('images/banner-1-txt.jpg?v=01');
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -637,9 +637,16 @@ html {
   color: #6b7280;
   font-size: 14px;
 }
-
+@media (max-width: 1200px) {
+  .hero-section {
+    height: 476px;
+}
+}
 /* Responsive */
 @media (max-width: 991px) {
+  .hero-section {
+      height: 394px;
+  }
   .hero-title {
       font-size: 3rem;
   }
@@ -657,6 +664,7 @@ html {
 
 @media (max-width: 767px) {
   .hero-section {
+    background-image: url('images/banner-mobile-2.jpeg');
       height: 500px;
   }
   
