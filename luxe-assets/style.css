@@ -1,12 +1,12 @@
 /* Color Variables */
 :root {
-  --primary-color: #78350f;
-  --primary-dark: #92400e;
+  --primary-color: #2C2C2C;
+  --primary-dark: #935133;
   --primary-light: #fef3c7;
   --text-dark: #1f2937;
   --text-muted: #6b7280;
   --border-color: #e5e7eb;
-  --bg-light: #fffbeb;
+  --bg-light: #F9F8F4;
 }
 
 /* Global Styles */
@@ -83,7 +83,7 @@ html {
 .hero-section {
   position: relative;
   height: 800px;
-  background-image: url('images/banner-1-txt.jpg?v=01');
+  background-image: url('images/banner-new-1.jpg?v=01');
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -200,7 +200,7 @@ html {
 
 /* Products Section */
 .products-section {
-  background-color: white;
+  background-color: var(--bg-light) !important;
 }
 
 .btn-carousel-nav {
@@ -360,7 +360,7 @@ html {
 }
 
 .why-card:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(147, 81, 51, 0.322);
 }
 
 .why-icon {
@@ -597,6 +597,16 @@ html {
   color: #6b7280;
   font-size: 14px;
 }
+@media (max-width: 1700px) {
+  .hero-section {
+    height: 700px;
+}
+}
+@media (max-width: 1440px) {
+  .hero-section {
+    height: 560px;
+}
+}
 @media (max-width: 1200px) {
   .hero-section {
     height: 476px;
@@ -605,7 +615,7 @@ html {
 /* Responsive */
 @media (max-width: 991px) {
   .hero-section {
-      height: 394px;
+      height: 300px;
   }
   .top-links {
       flex-wrap: wrap;
@@ -620,8 +630,8 @@ html {
 
 @media (max-width: 767px) {
   .hero-section {
-    background-image: url('images/banner-mobile-2-text.jpg');
-      height: 500px;
+    /* background-image: url('images/banner-mobile-2-text.jpg'); */
+      height: 910px;
   }
   .feature-icon {
     width: 70px;
@@ -642,7 +652,16 @@ html {
       display: none;
   }
 }
-
+@media (max-width: 576px) {
+  .hero-section {
+      height: 660px;
+  }
+}
+@media (max-width: 425px) {
+  .hero-section {
+      height: 500px;
+  }
+}
 /* Bootstrap Overrides */
 .btn-primary {
   background-color: var(--primary-color);
@@ -664,3 +683,4 @@ html {
   border-color: var(--primary-color);
   color: white;
 }
+
