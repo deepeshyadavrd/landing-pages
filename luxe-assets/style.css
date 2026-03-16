@@ -233,7 +233,7 @@ html {
 
 .product-track {
   display: flex;
-  gap: 24px;
+  gap: 12px;
   transition: transform 0.5s ease;
 }
 

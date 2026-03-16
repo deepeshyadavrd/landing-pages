@@ -47,7 +47,7 @@ function nextProduct(carouselId) {
     const track = carousel.querySelector('.product-track');
     const totalProducts = track.children.length;
     const state = carouselStates[carouselId];
-    const maxIndex = Math.max(0, totalProducts - state.itemsPerView);
+    const maxIndex = totalProducts - state.itemsPerView;
     
     if (state.currentIndex < maxIndex) {
         state.currentIndex++;
@@ -56,13 +56,41 @@ function nextProduct(carouselId) {
 }
 
 // Update carousel position
+// function updateCarousel(carouselId) {
+//     const carousel = document.getElementById(`${carouselId}-carousel`);
+//     const track = carousel.querySelector('.product-track');
+//     const card = track.querySelector('.product-card');
+
+//     const state = carouselStates[carouselId];
+
+//     const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+//     const cardWidth = card.getBoundingClientRect().width;
+    
+//     // const translateX = -(state.currentIndex * (100 / state.itemsPerView));
+//     const translateX = -(state.currentIndex * (cardWidth + gap));
+//     track.style.transform = `translateX(${translateX}px)`;
+// }
 function updateCarousel(carouselId) {
     const carousel = document.getElementById(`${carouselId}-carousel`);
     const track = carousel.querySelector('.product-track');
+    const card = track.querySelector('.product-card');
+
     const state = carouselStates[carouselId];
-    
-    const translateX = -(state.currentIndex * (100 / state.itemsPerView));
-    track.style.transform = `translateX(${translateX}%)`;
+
+    const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+    const cardWidth = card.offsetWidth;
+
+    const totalProducts = track.children.length;
+    const maxIndex = Math.max(0, totalProducts - state.itemsPerView);
+
+    // ✅ Prevent blank space after last card
+    if (state.currentIndex > maxIndex) {
+        state.currentIndex = maxIndex;
+    }
+
+    const translateX = -(state.currentIndex * (cardWidth + gap));
+
+    track.style.transform = `translateX(${translateX}px)`;
 }
 
 // Smooth scroll to section
