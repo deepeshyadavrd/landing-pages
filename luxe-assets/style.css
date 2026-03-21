@@ -390,11 +390,11 @@ html {
   margin-bottom: 16px;
 }
 
-.store-info {
+/* .store-info {
   font-size: 14px;
   color: var(--text-muted);
   margin-bottom: 16px;
-}
+} */
 
 .store-info p {
   margin-bottom: 8px;
