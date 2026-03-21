@@ -327,12 +327,6 @@ html {
 .why-icon {
   width: 64px;
   height: 64px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
   transition: transform 0.3s;
 }
 
@@ -340,21 +334,21 @@ html {
   transform: scale(1.1);
 }
 
-.why-icon i {
+/* .why-icon i {
   font-size: 32px;
   color: white;
-}
+} */
 
-.why-title {
+/* .why-title {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 12px;
-}
+} */
 
-.why-description {
+/* .why-description {
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
-}
+} */
 
 /* Stores Section */
 .stores-section {
@@ -362,10 +356,6 @@ html {
 }
 
 .store-card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
   transition: all 0.3s;
 }
 
@@ -373,10 +363,10 @@ html {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.store-image {
+/* .store-image {
   height: 200px;
   overflow: hidden;
-}
+} */
 
 .store-image img {
   width: 100%;
