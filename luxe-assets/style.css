@@ -123,16 +123,6 @@ html {
 .categories-section {
   background: linear-gradient(to bottom, white, var(--bg-light));
 }
-
-/* .section-title {
-  color: var(--text-dark);
-
-} */
-
-/* .section-subtitle {
-  color: var(--text-muted);
-} */
-
 .category-card {
   cursor: pointer;
   transition: transform 0.3s;
@@ -187,23 +177,12 @@ html {
   cursor: not-allowed;
 }
 
-/* .product-carousel {
-  overflow: hidden;
-  position: relative;
-} */
-
 .product-track {
-  /* display: flex;
-  gap: 12px; */
   transition: transform 0.5s ease;
 }
 
 .product-card {
   flex: 0 0 calc(25% - 18px);
-  /* background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  overflow: hidden; */
   transition: all 0.3s;
 }
 
@@ -218,9 +197,6 @@ html {
 }
 
 .product-image img {
-  /* width: 100%;
-  height: 100%;
-  object-fit: cover; */
   transition: transform 0.5s;
 }
 
@@ -306,11 +282,6 @@ html {
   background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   color: white;
 }
-/* 
-.why-us-section .section-title,
-.why-us-section .section-subtitle {
-  color: white;
-} */
 
 .why-card {
   background-color: rgba(255, 255, 255, 0.1);
@@ -334,22 +305,6 @@ html {
   transform: scale(1.1);
 }
 
-/* .why-icon i {
-  font-size: 32px;
-  color: white;
-} */
-
-/* .why-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 12px;
-} */
-
-/* .why-description {
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-} */
-
 /* Stores Section */
 .stores-section {
   background: linear-gradient(to bottom, var(--bg-light), white);
@@ -362,11 +317,6 @@ html {
 .store-card:hover {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
-
-/* .store-image {
-  height: 200px;
-  overflow: hidden;
-} */
 
 .store-image img {
   width: 100%;
@@ -390,25 +340,6 @@ html {
   margin-bottom: 16px;
 }
 
-/* .store-info {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-bottom: 16px;
-} */
-
-.store-info p {
-  margin-bottom: 8px;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.store-info i {
-  color: var(--primary-color);
-  margin-top: 2px;
-  flex-shrink: 0;
-}
-
 /* Contact Section */
 .contact-section {
   background-color: white;
@@ -423,52 +354,10 @@ html {
 .contact-icon {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
   background-color: var(--primary-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
 }
 
-.contact-icon i {
-  font-size: 24px;
-  color: var(--primary-color);
-}
 
-.contact-info-item h4 {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 4px;
-}
-
-.contact-info-item p {
-  color: var(--text-muted);
-  margin-bottom: 0;
-}
-
-.contact-form {
-  background: linear-gradient(135deg, var(--primary-light), #fde68a);
-  padding: 32px;
-  border-radius: 8px;
-}
-
-.contact-form .form-label {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-dark);
-}
-
-.contact-form .btn-primary {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-}
-
-.contact-form .btn-primary:hover {
-  background-color: var(--primary-dark);
-  border-color: var(--primary-dark);
-}
 
 /* Footer */
 .footer {
